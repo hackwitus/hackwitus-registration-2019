@@ -73,25 +73,6 @@ var confirmation = {
   website: String,
   resume: String,
 
-  needsReimbursement: Boolean,
-  address: {
-    name: String,
-    line1: String,
-    line2: String,
-    city: String,
-    state: String,
-    zip: String,
-    country: String
-  },
-  receipt: String,
-
-  hostNeededFri: Boolean,
-  hostNeededSat: Boolean,
-  genderNeutral: Boolean,
-  catFriendly: Boolean,
-  smokingFriendly: Boolean,
-  hostNotes: String,
-
   notes: String,
 
   signatureLiability: String,
@@ -142,10 +123,6 @@ var status = {
   },
   confirmBy: {
     type: Number
-  },
-  reimbursementGiven: {
-    type: Boolean,
-    default: false
   }
 };
 
@@ -183,12 +160,6 @@ var schema = new mongoose.Schema({
   lastUpdated: {
     type: Number,
     default: Date.now(),
-  },
-
-  teamCode: {
-    type: String,
-    min: 0,
-    max: 140,
   },
 
   verified: {
@@ -333,7 +304,7 @@ schema.statics.validateProfile = function(profile, cb){
     profile.name.length > 0 &&
     profile.adult &&
     profile.school.length > 0 &&
-    ['2018', '2019', '2020', '2021', '2022'].indexOf(profile.graduationYear) > -1 &&
+    ['2019', '2020', '2021', '2022', '2023'].indexOf(profile.graduationYear) > -1 &&
     ['M', 'F', 'O', 'N'].indexOf(profile.gender) > -1
     ));
 };
