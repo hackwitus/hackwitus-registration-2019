@@ -68,6 +68,16 @@ angular.module('reg').controller('AdminUsersCtrl', [
       });
     };
 
+    $scope.checkInStatus = function($event, user) {
+      $event.stopPropagation();
+
+      if (!user.status.checkedIn) {
+        return 'Check In User';
+      } else {
+        return 'Check Out User';
+      }
+    };
+
     $scope.toggleCheckIn = function($event, user, index) {
       $event.stopPropagation();
 
