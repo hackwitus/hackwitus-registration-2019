@@ -216,9 +216,37 @@ angular.module('reg').controller('AdminUsersCtrl', [
           });
         });
       } else {
-        UserService.removeAdmin(user._id).then(response => {
-          $scope.users[index] = response.data;
-          swal('Removed', response.data.profile.name + ' as admin', 'success');
+        swal({
+          title: 'Whoa, wait a minute!',
+          text: 'You are about remove ' + user.profile.name + ' as admin!',
+          icon: 'warning',
+          buttons: {
+            cancel: {
+              text: 'Cancel',
+              value: null,
+              visible: true
+            },
+            confirm: {
+              text: 'Yes, make them an admin',
+              className: 'danger-button',
+              closeModal: false,
+              value: true,
+              visible: true
+            }
+          }
+        }).then(value => {
+          if (!value) {
+            return;
+          }
+
+          UserService.removeAdmin(user._id).then(response => {
+            $scope.users[index] = response.data;
+            swal(
+              'Removed',
+              response.data.profile.name + ' as admin.',
+              'success'
+            );
+          });
         });
       }
     };
