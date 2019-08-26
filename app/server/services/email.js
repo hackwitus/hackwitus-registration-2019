@@ -193,6 +193,40 @@ controller.sendPasswordChangedEmail = function(email, callback) {
   });
 };
 
+controller.sendUserCheckedInEmail = function(email, callback) {
+  var options = {
+    to: email,
+    subject: '[' + HACKATHON_NAME + '] - You have been checked into the event'
+  };
+
+  var locals = {
+    title: "You're all set",
+    subtitle: 'Thanks for checking in',
+    description:
+      'You have been checked in to HackWITus 2019. If this is in error please reach out to the organizing team using the link below or at contact@hackwit.us.',
+    actionUrl: 'mailto:contact@hackwit.us',
+    actionName: 'Email Support'
+  };
+
+  /**
+   * Eamil-verify takes a few template values:
+   * {
+   *   verifyUrl: the url that the user must visit to verify their account
+   * }
+   */
+  sendOne('email-link-action', options, locals, function(err, info) {
+    if (err) {
+      console.log(err);
+    }
+    if (info) {
+      console.log(info.message);
+    }
+    if (callback) {
+      callback(err, info);
+    }
+  });
+};
+
 /**
  * Send a password recovery email.
  * @param  {[type]}   email    [description]

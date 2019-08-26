@@ -680,6 +680,9 @@ UserController.admitUser = function(id, user, callback) {
  * @param  {Function} callback args(err, user)
  */
 UserController.checkInById = function(id, user, callback) {
+  User.findById(id).then(user => {
+    Mailer.sendUserCheckedInEmail(user.email);
+  });
   User.findOneAndUpdate(
     {
       _id: id,
