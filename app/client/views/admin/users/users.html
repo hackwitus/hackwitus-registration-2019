@@ -98,7 +98,7 @@
             <th>E-mail address</th>
             <th>School</th>
             <th>Grad</th>
-            <th>V/S/A/C</th>
+            <th>V|S|A|C</th>
             <th>Edit</th>
             <th>Actions</th>
           </tr>
@@ -120,7 +120,7 @@
             <td class="collapsing">
               {{ user.profile.graduationYear }}
             </td>
-            <td class="collapsing">
+            <td class="collapsing status-field">
               <!-- Verified -->
               <div ng-if="user.verified" class="ui icon button" data-tooltip="User's Email Verified">
                 <i ng-if="user.verified" class="green check circle icon"></i>
@@ -149,30 +149,33 @@
               </div>
 
               <!-- Confirmed -->
-              <div ng-if="!user.status.admitted" class="ui icon button" data-tooltip="User Not Accepted">
+              <div ng-if="!user.status.admitted" class="ui icon button" data-tooltip="User Not Admitted">
                 <i ng-if="!user.status.admitted" class="circle thin icon"></i>
               </div>
 
-              <div ng-if="user.status.admitted && user.status.confirmed" class="ui icon button" data-tooltip="User Confirmed">
+              <div ng-if="user.status.admitted && user.status.confirmed" class="ui icon button" data-tooltip="User Confirmed RSVP">
                 <i
                   ng-if="user.status.admitted && user.status.confirmed"
                   class="green check circle icon"
                 ></i>
               </div>
 
-              <div ng-if="user.status.admitted && !user.status.confirmed && !user.status.declined" class="ui icon button" data-tooltip="User Not Confirmed">
+              <div ng-if="user.status.admitted && !user.status.confirmed && !user.status.declined" class="ui icon button" data-tooltip="User RSVP Not Confirmed">
                 <i
                   ng-if="user.status.admitted && !user.status.confirmed && !user.status.declined"
                   class="question icon"
                 ></i>
               </div>
-              <div ng-if="user.status.admitted && user.status.confirmed && user.status.declined" class="ui icon button" data-tooltip="User Declined">
+              
+              <div ng-if="user.status.admitted && user.status.confirmed && user.status.declined" class="ui icon button" data-tooltip="User Declined RSVP">
                 <i
                   ng-if="user.status.admitted && user.status.declined"
                   class="red remove circle icon"
                 ></i>
               </div>
             </td>
+
+            
 
             <td class="collapsing">
               <button
