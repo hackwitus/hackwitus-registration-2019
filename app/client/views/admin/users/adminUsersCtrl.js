@@ -227,7 +227,7 @@ angular.module('reg').controller('AdminUsersCtrl', [
               visible: true
             },
             confirm: {
-              text: 'Yes, make them an admin',
+              text: 'Yes, remove them as admin',
               className: 'danger-button',
               closeModal: false,
               value: true,
