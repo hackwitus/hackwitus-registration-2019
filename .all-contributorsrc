@@ -14,6 +14,17 @@
         "code",
         "review"
       ]
+    },
+    {
+      "login": "uptonm",
+      "name": "Mike Upton",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/23084678?v=4",
+      "profile": "https://michaelupton.tech",
+      "contributions": [
+        "code",
+        "design",
+        "maintenance"
+      ]
     }
   ],
   "contributorsPerLine": 7,
