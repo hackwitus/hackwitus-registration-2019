@@ -146,7 +146,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/ShawnToubeau"><img src="https://avatars1.githubusercontent.com/u/22332636?v=4" width="100px;" alt="Shawn Toubeau"/><br /><sub><b>Shawn Toubeau</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=ShawnToubeau" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/ShawnToubeau"><img src="https://avatars1.githubusercontent.com/u/22332636?v=4" width="100px;" alt="Shawn Toubeau"/><br /><sub><b>Shawn Toubeau</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=ShawnToubeau" title="Code">💻</a> <a href="#review-ShawnToubeau" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
