@@ -146,7 +146,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/corbinhak"><img src="https://avatars1.githubusercontent.com/u/32111971?v=4" width="100px;" alt="Corbin Hakimian"/><br /><sub><b>Corbin Hakimian</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=corbinhak" title="Code">💻</a> <a href="#maintenance-corbinhak" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/corbinhak"><img src="https://avatars1.githubusercontent.com/u/32111971?v=4" width="100px;" alt="Corbin Hakimian"/><br /><sub><b>Corbin Hakimian</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=corbinhak" title="Code">💻</a> <a href="#design-corbinhak" title="Design">🎨</a> <a href="#maintenance-corbinhak" title="Maintenance">🚧</a></td>
   </tr>
 </table>
 
