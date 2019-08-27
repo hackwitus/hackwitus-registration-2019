@@ -10,13 +10,13 @@ var ROOT_URL = process.env.ROOT_URL;
 var HACKATHON_NAME = process.env.HACKATHON_NAME;
 var EMAIL_ADDRESS = process.env.EMAIL_ADDRESS;
 var TWITTER_HANDLE = process.env.TWITTER_HANDLE;
-var FACEBOOK_HANDLE = process.env.FACEBOOK_HANDLE;
+var INSTAGRAM_HANDLE = process.env.INSTAGRAM_HANDLE;
 
 var EMAIL_HOST = process.env.EMAIL_HOST;
 var EMAIL_USER = process.env.EMAIL_USER;
 var EMAIL_PASS = process.env.EMAIL_PASS;
 var EMAIL_PORT = process.env.EMAIL_PORT;
-var EMAIL_CONTACT = process.env.EMAIL_CONTACT;
+var EMAIL_ADDRESS = process.env.EMAIL_CONTACT;
 var EMAIL_HEADER_IMAGE = process.env.EMAIL_HEADER_IMAGE;
 if (EMAIL_HEADER_IMAGE.indexOf('https') == -1) {
   EMAIL_HEADER_IMAGE = ROOT_URL + EMAIL_HEADER_IMAGE;
@@ -58,7 +58,7 @@ function sendOne(templateName, options, data, callback) {
   data.emailAddress = EMAIL_ADDRESS;
   data.hackathonName = HACKATHON_NAME;
   data.twitterHandle = TWITTER_HANDLE;
-  data.facebookHandle = FACEBOOK_HANDLE;
+  data.instagramHandle = INSTAGRAM_HANDLE;
 
   email
     .send({
