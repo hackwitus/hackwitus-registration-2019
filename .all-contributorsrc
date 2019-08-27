@@ -6,6 +6,16 @@
   "commit": false,
   "contributors": [
     {
+      "login": "corbinhak",
+      "name": "Corbin Hakimian",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/32111971?v=4",
+      "profile": "https://github.com/corbinhak",
+      "contributions": [
+        "code",
+        "review"
+      ]
+    },
+    {
       "login": "ShawnToubeau",
       "name": "Shawn Toubeau",
       "avatar_url": "https://avatars1.githubusercontent.com/u/22332636?v=4",
