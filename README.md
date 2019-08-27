@@ -1,4 +1,25 @@
-# Quill
+# HackWITus 2019 Registration
+For 2019 we decided to implement Quill as our registration, all of the original content from the Quill readme is listed below. 
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/corbinhak"><img src="https://avatars1.githubusercontent.com/u/32111971?v=4" width="100px;" alt="Corbin Hakimian"/><br /><sub><b>Corbin Hakimian</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=corbinhak" title="Code">💻</a> <a href="#design-corbinhak" title="Design">🎨</a> <a href="#maintenance-corbinhak" title="Maintenance">🚧</a></td>
+    <td align="center"><a href="https://github.com/ShawnToubeau"><img src="https://avatars1.githubusercontent.com/u/22332636?v=4" width="100px;" alt="Shawn Toubeau"/><br /><sub><b>Shawn Toubeau</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=ShawnToubeau" title="Code">💻</a> <a href="#review-ShawnToubeau" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://michaelupton.tech"><img src="https://avatars3.githubusercontent.com/u/23084678?v=4" width="100px;" alt="Mike Upton"/><br /><sub><b>Mike Upton</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=uptonm" title="Code">💻</a> <a href="#design-uptonm" title="Design">🎨</a> <a href="#maintenance-uptonm" title="Maintenance">🚧</a></td>
+  </tr>
+</table>
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+
+## Quill
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 Registration, for hackers!
 
@@ -137,20 +158,3 @@ Copyright (c) 2015-2016 Edwin Zhang (https://github.com/ehzhang). Released under
 [license]: https://github.com/techx/quill/blob/master/LICENSE.txt
 [email]: mailto:quill@hackmit.org
 [users]: https://github.com/techx/quill/wiki/Quill-Users
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/corbinhak"><img src="https://avatars1.githubusercontent.com/u/32111971?v=4" width="100px;" alt="Corbin Hakimian"/><br /><sub><b>Corbin Hakimian</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=corbinhak" title="Code">💻</a> <a href="#design-corbinhak" title="Design">🎨</a> <a href="#maintenance-corbinhak" title="Maintenance">🚧</a></td>
-    <td align="center"><a href="https://github.com/ShawnToubeau"><img src="https://avatars1.githubusercontent.com/u/22332636?v=4" width="100px;" alt="Shawn Toubeau"/><br /><sub><b>Shawn Toubeau</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=ShawnToubeau" title="Code">💻</a> <a href="#review-ShawnToubeau" title="Reviewed Pull Requests">👀</a></td>
-    <td align="center"><a href="https://michaelupton.tech"><img src="https://avatars3.githubusercontent.com/u/23084678?v=4" width="100px;" alt="Mike Upton"/><br /><sub><b>Mike Upton</b></sub></a><br /><a href="https://github.com/hackwitus/hackwitus-registration-2019/commits?author=uptonm" title="Code">💻</a> <a href="#design-uptonm" title="Design">🎨</a> <a href="#maintenance-uptonm" title="Maintenance">🚧</a></td>
-  </tr>
-</table>
-
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
