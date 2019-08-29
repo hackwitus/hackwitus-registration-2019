@@ -6,8 +6,8 @@
  preserveAspectRatio="xMidYMid meet">
 <defs>
     <linearGradient id="leo-gradient" x1="0%" y1="100%" x2="100%" y2="0%">
-        <stop offset="0%" style="stop-color:#932c53;" />
-        <stop offset="50%" style="stop-color:#7f5e7d;" />
+        <stop offset="0%" style="stop-color:#29799a;" />
+        <stop offset="50%" style="stop-color:#49a09e;" />
     </linearGradient>
 </defs>
 <g transform="translate(0.000000,7500.000000) scale(0.100000,-0.100000)"

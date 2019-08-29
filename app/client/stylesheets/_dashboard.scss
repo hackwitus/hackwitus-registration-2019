@@ -1,11 +1,13 @@
 #dashboard {
   .status {
-    text-align: center;
+    text-align: left;
     p {
       text-align: left;
     }
     .button {
       margin-top: 12px;
+      margin-left: 50%;
+      transform: translateX(-50%);
     }
     .header {
       font-size: 1.2em;

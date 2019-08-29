@@ -1,3 +1,9 @@
 // Branding overrides
 //
 // Copy variables from `_branding.scss` to this file to override default values.
+.status-field * {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}

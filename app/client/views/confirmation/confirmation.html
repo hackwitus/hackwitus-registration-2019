@@ -5,46 +5,42 @@
 
   <div class="ui stackable page grid">
     <div class="column">
-
       <div class="ui form">
-
         <div class="divided title">Basic Details</div>
 
         <fieldset ng-disabled="pastConfirmation">
-
           <div class="field">
             <label> What's your phone number? (required) </label>
             <p>
               We need this in case we need to get ahold of you!
             </p>
-            <input type="tel"
-                   name="phone"
-                   ng-model="user.confirmation.phoneNumber"
-                   placeholder="(123) - 555 - 1234"
-                   required>
+            <input
+              type="tel"
+              name="phone"
+              ng-model="user.confirmation.phoneNumber"
+              placeholder="(123) - 555 - 1234"
+              required
+            />
           </div>
 
           <div class="field">
             <label> Dietary Restrictions </label>
 
             <p>
-              If your restriction is not included here, please let us know in the additional notes at the bottom.
+              If your restriction is not included here, please let us know in
+              the additional notes at the bottom.
             </p>
             <p>
               We'll make sure you get fed :)
             </p>
-
           </div>
 
           <div class="inline fields">
-            <div class="field"
-              ng-repeat="(key, value) in dietaryRestrictions">
-
+            <div class="field" ng-repeat="(key, value) in dietaryRestrictions">
               <div class="ui checkbox">
                 <input type="checkbox" ng-model="dietaryRestrictions[key]" />
-                <label>{{key}}</label>
+                <label>{{ key }}</label>
               </div>
-
             </div>
           </div>
 
@@ -56,7 +52,8 @@
             <select
               name="shirt"
               ng-model="user.confirmation.shirtSize"
-              required>
+              required
+            >
               <option value="">Shirt Size</option>
               <option value="XS">Unisex X-Small</option>
               <option value="S">Unisex Small</option>
@@ -78,136 +75,162 @@
               Will you be needing hardware?
             </label>
             <div class="ui checkbox">
-              <input type="checkbox" ng-model="user.confirmation.wantsHardware">
+              <input
+                type="checkbox"
+                ng-model="user.confirmation.wantsHardware"
+              />
               <label> Yes, I would like to use hardware in my hack. </label>
             </div>
           </div>
 
-          <div
-            class="field"
-            ng-show="user.confirmation.wantsHardware">
+          <div class="field" ng-show="user.confirmation.wantsHardware">
             <label>
               What kind of hardware would be useful for you?
             </label>
             <p>
-              We will have a hardware checkout, and we'll try our best to provide things that would be useful to you - however, we can't guarantee everything. We will publish a list of available hardware closer to the day of the event.
+              We will have a hardware checkout, and we'll try our best to
+              provide things that would be useful to you - however, we can't
+              guarantee everything. We will publish a list of available hardware
+              closer to the day of the event.
             </p>
-            <input type="text" ng-model="user.confirmation.hardware">
+            <input type="text" ng-model="user.confirmation.hardware" />
           </div>
 
+          <br />
+          <br />
 
-          <br>
-          <br>
-
-          <div class="divided title"> Skills & Accomplishments </div>
+          <div class="divided title">Skills & Accomplishments</div>
 
           <div class="field">
             <label> What are you studying? </label>
-            <input type="text"
-                   name="study"
-                   placeholder="Computer Science, Product Design, Basket Weaving, etc."
-                   ng-model="user.confirmation.major">
+            <input
+              type="text"
+              name="study"
+              placeholder="Computer Science, Product Design, Basket Weaving, etc."
+              ng-model="user.confirmation.major"
+            />
           </div>
 
           <div class="field">
             <label> Github </label>
-            <input type="text"
-                   name="github"
-                   placeholder="https://github.com/foobar"
-                   ng-model="user.confirmation.github">
+            <input
+              type="text"
+              name="github"
+              placeholder="https://github.com/foobar"
+              ng-model="user.confirmation.github"
+            />
           </div>
 
           <div class="field">
             <label> Twitter </label>
-            <input type="text"
-                   name="twitter"
-                   placeholder="https://twitter.com/foobar"
-                   ng-model="user.confirmation.twitter">
+            <input
+              type="text"
+              name="twitter"
+              placeholder="https://twitter.com/foobar"
+              ng-model="user.confirmation.twitter"
+            />
           </div>
 
           <div class="field">
             <label> Skill Sheet </label>
             <p>
-              Upload a document outlining any skills or experience you'd like to share (ex. resume). PDF preferred!
+              Upload a document outlining any skills or experience you'd like to
+              share (ex. resume). PDF preferred!
             </p>
             <a
               target="_blank"
               href="https://www.dropbox.com/request/GTwM9cPsds7fBQjwko0s"
-              class="ui pink button">
+              class="ui pink button"
+            >
               Upload
             </a>
           </div>
 
-          <br>
-          <br>
+          <br />
+          <br />
 
           <div class="divided title">Legal</div>
 
           <div class="field">
             <label> Liability Waiver </label>
             <p>
-              <a
-                target="_blank"
-                href="https://hackwit.us/liability-waiver/">
+              <a target="_blank" href="https://hackwit.us/liability-waiver/">
                 Liability Waiver
               </a>
             </p>
             <p>
-              For legal reasons, our university asks that you read and accept the terms of our liability waiver. Again, as we mentioned in the original lottery application - you <strong> must </strong> be 18 years or older or an WIT undergraduate by the day of the event, or <strong> we will refuse you admission at the door. We will be checking ID. </strong>
+              For legal reasons, our university asks that you read and accept
+              the terms of our liability waiver. Again, as we mentioned in the
+              original application - you <strong> must </strong> be 18 years or
+              older or an WIT undergraduate by the day of the event, or
+              <strong>
+                we will refuse you admission at the door. We will be checking
+                ID.
+              </strong>
             </p>
             <p>
-              By writing my name below, I affirm that I have read and accepted the terms of the liability waiver above, and will be either an WIT undergraduate or 18 years or older at the time of the event.
+              By writing my name below, I affirm that I have read and accepted
+              the terms of the liability waiver above, and will be either an WIT
+              undergraduate or 18 years or older at the time of the event.
             </p>
-            <input type="text"
-                   name="signatureLiabilityWaiver"
-                   placeholder="Your Full Legal Name"
-                   ng-model="user.confirmation.signatureLiability">
+            <input
+              type="text"
+              name="signatureLiabilityWaiver"
+              placeholder="Your Full Legal Name"
+              ng-model="user.confirmation.signatureLiability"
+            />
           </div>
 
           <div class="field">
             <label> Photo Release </label>
             <p>
-              <a
-                target="_blank"
-                href="https://go.hackmit.org/photo-release">
+              <a target="_blank" href="https://go.hackmit.org/photo-release">
                 Photo Release
               </a>
             </p>
             <p>
-              Signing this photo release means if we take photos or photos of you, we can share it with the world.
+              Signing this photo release means if we take photos or photos of
+              you, we can share it with the world.
             </p>
             <p>
-              By writing my name below, I affirm that I have read and accepted the terms of the photo release above.
+              By writing my name below, I affirm that I have read and accepted
+              the terms of the photo release above.
             </p>
-            <input type="text"
-                   name="signaturePhotoRelease"
-                   placeholder="Your Full Legal Name"
-                   ng-model="user.confirmation.signaturePhotoRelease">
+            <input
+              type="text"
+              name="signaturePhotoRelease"
+              placeholder="Your Full Legal Name"
+              ng-model="user.confirmation.signaturePhotoRelease"
+            />
           </div>
 
           <div class="field">
             <label> Code of Conduct </label>
             <p>
-              <a
-                target="_blank"
-                href="https://hackwit.us/code_of_conduct/">
+              <a target="_blank" href="https://hackwit.us/code_of_conduct/">
                 Hacker Code of Conduct
               </a>
             </p>
             <p>
-              It is extremely important to us that attendees follow a set of guidelines to make the event fun for everyone involved. Please read through and make sure you understand what we will be expecting of you.
+              It is extremely important to us that attendees follow a set of
+              guidelines to make the event fun for everyone involved. Please
+              read through and make sure you understand what we will be
+              expecting of you.
             </p>
             <p>
-              By writing my name below, I affirm that I have read and will abide by the code of conduct detailed above.
+              By writing my name below, I affirm that I have read and will abide
+              by the code of conduct detailed above.
             </p>
-            <input type="text"
-                   name="signatureCodeOfConduct"
-                   placeholder="Your Full Legal Name"
-                   ng-model="user.confirmation.signatureCodeOfConduct">
+            <input
+              type="text"
+              name="signatureCodeOfConduct"
+              placeholder="Your Full Legal Name"
+              ng-model="user.confirmation.signatureCodeOfConduct"
+            />
           </div>
 
-          <br>
-          <br>
+          <br />
+          <br />
 
           <div class="divided title">everything else</div>
 
@@ -218,18 +241,18 @@
             <p>
               If there's anything else you need to let us know, tell us here!
             </p>
-            <textarea
-              ng-model="user.confirmation.notes"></textarea>
+            <textarea ng-model="user.confirmation.notes"></textarea>
           </div>
 
           <div class="field" ng-hide="regIsClosed">
-            <button type="submit"
-                    class="fluid ui purple button"
-                    ng-click="submitForm()">
+            <button
+              type="submit"
+              class="fluid ui purple button"
+              ng-click="submitForm()"
+            >
               Submit
             </button>
           </div>
-
         </fieldset>
       </div>
     </div>

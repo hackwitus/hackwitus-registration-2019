@@ -4,7 +4,7 @@ var User = require('../models/User');
 
 // In memory stats.
 var stats = {};
-function calculateStats(){
+function calculateStats() {
   console.log('Calculating stats...');
   var newStats = {
     lastUpdated: 0,
@@ -32,7 +32,7 @@ function calculateStats(){
     submitted: 0,
     admitted: 0,
     confirmed: 0,
-    confirmedMit: 0,
+    confirmedWit: 0,
     declined: 0,
 
     confirmedFemale: 0,
@@ -41,19 +41,19 @@ function calculateStats(){
     confirmedNone: 0,
 
     shirtSizes: {
-      'XS': 0,
-      'S': 0,
-      'M': 0,
-      'L': 0,
-      'XL': 0,
-      'XXL': 0,
-      'WXS': 0,
-      'WS': 0,
-      'WM': 0,
-      'WL': 0,
-      'WXL': 0,
-      'WXXL': 0,
-      'None': 0
+      XS: 0,
+      S: 0,
+      M: 0,
+      L: 0,
+      XL: 0,
+      XXL: 0,
+      WXS: 0,
+      WS: 0,
+      WM: 0,
+      WL: 0,
+      WXL: 0,
+      WXXL: 0,
+      None: 0
     },
 
     dietaryRestrictions: {},
@@ -75,17 +75,16 @@ function calculateStats(){
     checkedIn: 0
   };
 
-  User
-    .find({})
-    .exec(function(err, users){
-      if (err || !users){
-        throw err;
-      }
+  User.find({}).exec(function(err, users) {
+    if (err || !users) {
+      throw err;
+    }
 
-      newStats.total = users.length;
+    newStats.total = users.length;
 
-      async.each(users, function(user, callback){
-
+    async.each(
+      users,
+      function(user, callback) {
         // Grab the email extension
         var email = user.email.split('@')[1];
 
@@ -105,42 +104,54 @@ function calculateStats(){
         newStats.confirmed += user.status.confirmed ? 1 : 0;
 
         // Count confirmed that are mit
-        newStats.confirmedMit += user.status.confirmed && email === "mit.edu" ? 1 : 0;
+        newStats.confirmedWit +=
+          user.status.confirmed && email === 'wit.edu' ? 1 : 0;
 
-        newStats.confirmedFemale += user.status.confirmed && user.profile.gender == "F" ? 1 : 0;
-        newStats.confirmedMale += user.status.confirmed && user.profile.gender == "M" ? 1 : 0;
-        newStats.confirmedOther += user.status.confirmed && user.profile.gender == "O" ? 1 : 0;
-        newStats.confirmedNone += user.status.confirmed && user.profile.gender == "N" ? 1 : 0;
+        newStats.confirmedFemale +=
+          user.status.confirmed && user.profile.gender == 'F' ? 1 : 0;
+        newStats.confirmedMale +=
+          user.status.confirmed && user.profile.gender == 'M' ? 1 : 0;
+        newStats.confirmedOther +=
+          user.status.confirmed && user.profile.gender == 'O' ? 1 : 0;
+        newStats.confirmedNone +=
+          user.status.confirmed && user.profile.gender == 'N' ? 1 : 0;
 
         // Count declined
         newStats.declined += user.status.declined ? 1 : 0;
 
         // Count the number of people who need reimbursements
-        newStats.reimbursementTotal += user.confirmation.needsReimbursement ? 1 : 0;
+        newStats.reimbursementTotal += user.confirmation.needsReimbursement
+          ? 1
+          : 0;
 
         // Count the number of people who still need to be reimbursed
-        newStats.reimbursementMissing += user.confirmation.needsReimbursement &&
-          !user.status.reimbursementGiven ? 1 : 0;
+        newStats.reimbursementMissing +=
+          user.confirmation.needsReimbursement &&
+          !user.status.reimbursementGiven
+            ? 1
+            : 0;
 
         // Count the number of people who want hardware
         newStats.wantsHardware += user.confirmation.wantsHardware ? 1 : 0;
 
         // Count schools
-        if (!newStats.demo.schools[email]){
+        if (!newStats.demo.schools[email]) {
           newStats.demo.schools[email] = {
             submitted: 0,
             admitted: 0,
             confirmed: 0,
-            declined: 0,
+            declined: 0
           };
         }
-        newStats.demo.schools[email].submitted += user.status.completedProfile ? 1 : 0;
+        newStats.demo.schools[email].submitted += user.status.completedProfile
+          ? 1
+          : 0;
         newStats.demo.schools[email].admitted += user.status.admitted ? 1 : 0;
         newStats.demo.schools[email].confirmed += user.status.confirmed ? 1 : 0;
         newStats.demo.schools[email].declined += user.status.declined ? 1 : 0;
 
         // Count graduation years
-        if (user.profile.graduationYear){
+        if (user.profile.graduationYear) {
           newStats.demo.year[user.profile.graduationYear] += 1;
         }
 
@@ -153,28 +164,47 @@ function calculateStats(){
         // }
 
         // Count shirt sizes
-        if (user.confirmation.shirtSize in newStats.shirtSizes){
+        if (user.confirmation.shirtSize in newStats.shirtSizes) {
           newStats.shirtSizes[user.confirmation.shirtSize] += 1;
         }
 
         // Host needed counts
         newStats.hostNeededFri += user.confirmation.hostNeededFri ? 1 : 0;
         newStats.hostNeededSat += user.confirmation.hostNeededSat ? 1 : 0;
-        newStats.hostNeededUnique += user.confirmation.hostNeededFri || user.confirmation.hostNeededSat ? 1 : 0;
+        newStats.hostNeededUnique +=
+          user.confirmation.hostNeededFri || user.confirmation.hostNeededSat
+            ? 1
+            : 0;
 
-        newStats.hostNeededFemale
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "F" ? 1 : 0;
-        newStats.hostNeededMale
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "M" ? 1 : 0;
-        newStats.hostNeededOther
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "O" ? 1 : 0;
-        newStats.hostNeededNone
-          += (user.confirmation.hostNeededFri || user.confirmation.hostNeededSat) && user.profile.gender == "N" ? 1 : 0;
+        newStats.hostNeededFemale +=
+          (user.confirmation.hostNeededFri ||
+            user.confirmation.hostNeededSat) &&
+          user.profile.gender == 'F'
+            ? 1
+            : 0;
+        newStats.hostNeededMale +=
+          (user.confirmation.hostNeededFri ||
+            user.confirmation.hostNeededSat) &&
+          user.profile.gender == 'M'
+            ? 1
+            : 0;
+        newStats.hostNeededOther +=
+          (user.confirmation.hostNeededFri ||
+            user.confirmation.hostNeededSat) &&
+          user.profile.gender == 'O'
+            ? 1
+            : 0;
+        newStats.hostNeededNone +=
+          (user.confirmation.hostNeededFri ||
+            user.confirmation.hostNeededSat) &&
+          user.profile.gender == 'N'
+            ? 1
+            : 0;
 
         // Dietary restrictions
-        if (user.confirmation.dietaryRestrictions){
-          user.confirmation.dietaryRestrictions.forEach(function(restriction){
-            if (!newStats.dietaryRestrictions[restriction]){
+        if (user.confirmation.dietaryRestrictions) {
+          user.confirmation.dietaryRestrictions.forEach(function(restriction) {
+            if (!newStats.dietaryRestrictions[restriction]) {
               newStats.dietaryRestrictions[restriction] = 0;
             }
             newStats.dietaryRestrictions[restriction] += 1;
@@ -185,28 +215,27 @@ function calculateStats(){
         newStats.checkedIn += user.status.checkedIn ? 1 : 0;
 
         callback(); // let async know we've finished
-      }, function() {
+      },
+      function() {
         // Transform dietary restrictions into a series of objects
         var restrictions = [];
-        _.keys(newStats.dietaryRestrictions)
-          .forEach(function(key){
-            restrictions.push({
-              name: key,
-              count: newStats.dietaryRestrictions[key],
-            });
+        _.keys(newStats.dietaryRestrictions).forEach(function(key) {
+          restrictions.push({
+            name: key,
+            count: newStats.dietaryRestrictions[key]
           });
+        });
         newStats.dietaryRestrictions = restrictions;
 
         // Transform schools into an array of objects
         var schools = [];
-        _.keys(newStats.demo.schools)
-          .forEach(function(key){
-            schools.push({
-              email: key,
-              count: newStats.demo.schools[key].submitted,
-              stats: newStats.demo.schools[key]
-            });
+        _.keys(newStats.demo.schools).forEach(function(key) {
+          schools.push({
+            email: key,
+            count: newStats.demo.schools[key].submitted,
+            stats: newStats.demo.schools[key]
           });
+        });
         newStats.demo.schools = schools;
 
         // Likewise, transform the teams into an array of objects
@@ -223,9 +252,9 @@ function calculateStats(){
         console.log('Stats updated!');
         newStats.lastUpdated = new Date();
         stats = newStats;
-      });
-    });
-
+      }
+    );
+  });
 }
 
 // Calculate once every five minutes.
@@ -234,7 +263,7 @@ setInterval(calculateStats, 300000);
 
 var Stats = {};
 
-Stats.getUserStats = function(){
+Stats.getUserStats = function() {
   return stats;
 };
 

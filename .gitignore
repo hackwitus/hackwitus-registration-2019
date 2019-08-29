@@ -1,7 +1,6 @@
 # Project
 db/
 node_modules/
-semantic/
 
 # macOS
 .DS_Store
