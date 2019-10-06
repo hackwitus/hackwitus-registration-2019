@@ -1,9 +1,14 @@
 # Project
 db/
 node_modules/
+exports
 
 # macOS
 .DS_Store
 .python-version
 
+# enviroment vars
 .env
+
+# IDE stuff
+.idea
